@@ -15,4 +15,10 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.save
   end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:name)
+  end
 end
